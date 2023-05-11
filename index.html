@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net2Fox Studio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2>Net2Fox Studio</h2>
+        </div>
+        <div class="navbar">
+            <a href=".about">Обо мне</a>
+            <a href=".projects">Мои проекты</a>
+        </div>
+    </header>
+
+    <center><img id="background-img" src="images/background.png"></center>
+
+    <div class="about">
+        <h1 id="obo">ОБО</h1>
+        <h1 id="mne">МНЕ</h1>
+        <h1 id="name">Владимир aka Net2Fox</h1>
+        <a href="https:/t.me/net2fox/"><img src="https://www.gravatar.com/avatar/500c10c28dc2dbdaee2930ce97926d42?s=500"></a>
+        <p>Программист на языках C# и Kotlin. Разработчик программ на WPF для ПК и мобильных приложений на Android.</p>
+    </div>
+
+    <div class="projects">
+        <center>
+            <h1>Мои проекты</h1>
+            <a class="project" href="https://github.com/Net2Fox/USort">
+                <img class="project_img" src="images/usort.png">
+            </a>
+            <a class="project" href="https://github.com/Net2Fox/YATT">
+                <img class="project_img" src="images/yatt.png">
+            </a>
+        </center>
+    </div>
+
+    <center><p id="by">Дизайн - Net2Fox<br>Картинка в заголовке - NegaTiv</p></center>
+
+    <script>
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 1){
+                $('header').addClass("sticky");
+            }
+            else{
+                $('header').removeClass("sticky");
+            }
+        });
+
+
+        $(document).ready(function(){
+        	$(".navbar").on("click", "a", function (event) {
+        		//отменяем стандартную обработку нажатия по ссылке
+        		event.preventDefault();
+                var id  = $(this).attr('href');
+                if(id == ".projects") {
+                    //узнаем высоту от начала страницы до блока на который ссылается якорь
+        		    var top = $(id).offset().top - 50;
+                } else {
+                    //узнаем высоту от начала страницы до блока на который ссылается якорь
+        		    var top = $(id).offset().top;
+                }
+        		//анимируем переход на расстояние - top за 500 мс
+        		$('body,html').animate({scrollTop: top}, 500, "swing");
+        	});
+        });
+    </script>
+</body>
+</html>
