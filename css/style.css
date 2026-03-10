@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     outline: none;
-    max-width: 1200px;
+	max-width: 1200px;
     margin: auto;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -74,24 +74,14 @@ header.sticky {
 #background-img {
     padding-top: 60px;
     transition-duration: 500ms;
+	max-width: 100%;
+	height: auto;
 }
 
 /* Обо мне */
 
 .about {
     font-size: 3em;
-}
-
-#obo{
-    padding-left: 330px;
-    position: absolute;
-    top: 160px;
-}
-
-#mne{
-    padding-left: 640px;
-    position: absolute;
-    top: 160px;
 }
 
 #name {
@@ -165,3 +155,84 @@ header.sticky {
     margin-top: 800px; /* 670 */
 
 }
+
+@media only screen and (max-width: 1200px) {
+    
+    header, .navbar, .about, .projects {
+        padding: 0px 0px;
+    }
+	
+	header {
+        width: 100%;
+        /*padding: 10px 0.5% 5px 0.5%;*/
+    }
+
+    .logo h2 {
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 6px;
+    }
+	
+	header .logo h2 {
+		font-size: 0.8em;
+	}
+
+    .navbar {
+        font-size: 1em;
+    }
+
+    #name {
+        padding-top: 50px;
+    }
+
+    #background-img {
+        margin: 0px;
+        padding-top: 30px;
+    }
+
+    .about, .projects {
+        font-size: 2em;
+    }
+
+    .about img {
+        width: 90%;
+        transform: translate(5.5%,0%);
+        margin: 0px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
+    .project_img {
+        width: 90%;
+        margin: 20px 0px 0px 20px;
+    }
+
+    .about p {
+        font-size: 0.8em;
+        margin: 20px 5%;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .projects h1 {
+        font-size: 2.5em;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .about img:hover {
+        width: 90%;
+        transition-duration: 500ms;
+    }
+
+    .project_img:hover{
+        width: 90%;
+        transition-duration: 500ms;
+    }
+
+    #by {
+        margin-top: 70px; /* 670 */
+    }
+}
+
+
